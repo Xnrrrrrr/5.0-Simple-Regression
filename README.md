@@ -35,11 +35,10 @@ When we compare Figure 2a to Figure 2b, we can see that the distance between eac
 
 The main components of the regression line are the intercept, slope, and some measure of error in our estimate, which are summarized in the following equation:
 
-Yi: the outcome that we want to predict
-b0: intercept, the value of Y when X = 0
-b1: slope, the rate of change in Y for each 1 unit increase in X
-Xi: the value our prediction is based on
-εi : residual/error term in our prediction model
+![image](https://github.com/Xnrrrrrr/5.0-Simple-Regression/assets/133546385/93e72f1c-caa5-4d6e-b9dd-eef2c98cf529)
+
+![image](https://github.com/Xnrrrrrr/5.0-Simple-Regression/assets/133546385/d36b919d-5824-428f-81b2-08f941916de9)
+
 The parameters b0 and b1 are referred to as the regression coefficients.
 
  
@@ -83,10 +82,7 @@ Prediction Interval: Shows the range of Y values for a specific value of X
 Confidence Interval: Shows the range of the mean of Y for a specific value of X
 
 Let’s look at an example of this. If we run an analysis and get the following prediction and confidence intervals for our earlier estimate:
-
-When Attendance is 20, Grades = 80
-95% Prediction Interval: 70 to 90
-95% Confidence Interval: 77 to 83
+![image](https://github.com/Xnrrrrrr/5.0-Simple-Regression/assets/133546385/c7bfc73a-c4c1-46ed-9f5c-6cdb5d6eb183)
 
 We could then come to the following conclusions:
 
@@ -117,6 +113,9 @@ Please note that when examining a Simple Regression output in the R software, yo
 
 R Tutorial: Simple Regression in R
 In R we use the lm() function to conduct regression analyses. The abbreviation ‘lm’ stands for linear model. The command takes the following form:
+![image](https://github.com/Xnrrrrrr/5.0-Simple-Regression/assets/133546385/54e654ea-2383-48f3-8e80-842d1a421003)
+
+![image](https://github.com/Xnrrrrrr/5.0-Simple-Regression/assets/133546385/2de6572a-9142-4155-8260-36fb09d53c46)
 
 newModel = lm(outcome ~ predictor, data = dataFrame, na.action = an action)
 lm() function Component
@@ -155,6 +154,9 @@ It is important to know how to build prediction and confidence intervals around 
 
 Let’s say we wanted to use our regression model to predict what the sales would be if a record company spent £200,000 on advertising a new album. Given that the units are already in thousands of pounds, we can enter the following value into the predict function for adverts.
 
+![image](https://github.com/Xnrrrrrr/5.0-Simple-Regression/assets/133546385/d4a9b140-df65-421a-9314-2c2178685e93)
+
+
 Prediction Interval:
 predict(albumSales.1, data.frame(adverts = 200), interval = "prediction")
 Confidence Interval:
@@ -166,5 +168,8 @@ You would report these results as the following:
 Prediction Interval: For an investment of £200,000 in advertising, the predicted level of sales would be £153,365, with a 95% prediction interval of £22,666 to £284,063.
 Confidence Interval: For an investment of £200,000 in advertising, the predicted level of sales would be £153,365, with a 95% confidence interval of £141,255 to £165,475.
 By default, R will report 95% confidence and prediction intervals but this can be adjusted in R. In the syntax below an 80% confidence interval is created around our predicted value of sales when the investment in advertisements is £200,000. This was done by adding the level = .80 argument to the function predict().
+
+![image](https://github.com/Xnrrrrrr/5.0-Simple-Regression/assets/133546385/2431b00b-dba7-4287-aefd-1b46669353bc)
+
 
 predict(albumSales.1, data.frame(adverts = 200), interval = "confidence", level = .80)
